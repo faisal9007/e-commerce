@@ -1,5 +1,9 @@
+
+import 'package:e_commerce/features/auth/presentation/screen/sign_up_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
+import '../widgets/app_logo.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -11,14 +15,28 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
+  void initState() {
+    super.initState();
+    _moveToNextScreen();
+  }
+
+  Future<void> _moveToNextScreen() async {
+    await Future.delayed(const Duration(seconds: 3));
+    Navigator.pushReplacementNamed(context, SignUpScreen.name);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          children: [
-             Expanded(child: SvgPicture.asset('assets/images/logo (1).svg')),
-            CircularProgressIndicator(),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [
+              Expanded(child: AppLogo()),
+              CircularProgressIndicator(),
+            ],
+          ),
         ),
       ),
     );
