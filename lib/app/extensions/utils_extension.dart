@@ -1,6 +1,8 @@
 import 'package:e_commerce/l10n/app_localizations.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-extension LocalizationExtension on BuildContext{
+extension UtilsExtension on BuildContext{
   AppLocalizations get l10n => AppLocalizations.of(this)!;
+  TextTheme get textTheme => TextTheme.of(this);
 }
