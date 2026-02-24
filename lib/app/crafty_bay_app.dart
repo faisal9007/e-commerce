@@ -1,4 +1,5 @@
 import 'package:e_commerce/app/provider/localization_provider.dart';
+import 'package:e_commerce/app/provider/main_nav_provider.dart';
 import 'package:e_commerce/app/provider/theme_provider.dart';
 import 'package:e_commerce/app/routes.dart';
 import 'package:flutter/material.dart';
@@ -18,38 +19,39 @@ class CraftyBayApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => LocalizationProvider()..loadLocale()),
-        ChangeNotifierProvider(create: (_) => ThemeProvider()..loadThemeData()),
+        ChangeNotifierProvider(
+          create: (_) =>
+          LocalizationProvider()..loadLocale(),
+        ),
+        ChangeNotifierProvider(create: (_) =>
+        ThemeProvider()..loadThemeData()),
+        ChangeNotifierProvider(create: (_) => MainNavProvider()),
       ],
       child: Consumer<LocalizationProvider>(
-          builder: (context, localizationProvider, _) {
-            return Consumer<ThemeProvider>(
-              builder: (context, themeProvider, _) {
-                return MaterialApp(
-                  title: 'CraftyBay E-Commerce',
-                  initialRoute: SplashScreen.name,
-                  onGenerateRoute: Routes.onGenerateRoute,
-                  theme: AppTheme.lightTheme,
-                  darkTheme: AppTheme.darkTheme,
-                  debugShowCheckedModeBanner: false,
-                  themeMode: themeProvider.themeMode,
-                  localizationsDelegates: [
-                    AppLocalizations.delegate,
-                    GlobalMaterialLocalizations.delegate,
-                    GlobalCupertinoLocalizations.delegate,
-                    GlobalWidgetsLocalizations.delegate,
-                  ],
-                  supportedLocales: localizationProvider.supportedLocales,
-                  locale: localizationProvider.locale,
-
-                );
-              }
-            );
-          }
-      )
-
+        builder: (context, localizationProvider, _) {
+          return Consumer<ThemeProvider>(
+            builder: (context, themeProvider, _) {
+              return MaterialApp(
+                title: 'CraftyBay E-Commerce',
+                initialRoute: SplashScreen.name,
+                onGenerateRoute: Routes.onGenerateRoute,
+                theme: AppTheme.lightTheme,
+                darkTheme: AppTheme.darkTheme,
+                debugShowCheckedModeBanner: false,
+                themeMode: themeProvider.themeMode,
+                localizationsDelegates: [
+                  AppLocalizations.delegate,
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                ],
+                supportedLocales: localizationProvider.supportedLocales,
+                locale: localizationProvider.locale,
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }
-
-

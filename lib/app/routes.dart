@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../features/auth/presentation/screen/main_nav_holder_screen.dart';
 import '../features/auth/presentation/screen/sign_in_screen.dart';
 import '../features/auth/presentation/screen/sign_up_screen.dart';
 import '../features/auth/presentation/screen/splash_screen.dart';
+import '../features/auth/presentation/screen/varify_otp_screen.dart';
 
 class Routes{
   static Route<dynamic> onGenerateRoute(RouteSettings settings){
@@ -14,6 +16,10 @@ class Routes{
         widget = SignUpScreen();
       case SignInScreen.name:
         widget = SignInScreen();
+      case VarifyOtpScreen.name:
+        widget = VarifyOtpScreen();
+      case MainNavHolderScreen.name:
+        widget = MainNavHolderScreen();
       default:
         widget = SplashScreen();
     }

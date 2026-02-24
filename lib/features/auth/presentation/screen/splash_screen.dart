@@ -3,6 +3,7 @@ import 'package:e_commerce/features/auth/presentation/screen/sign_up_screen.dart
 import 'package:flutter/material.dart';
 
 import '../widgets/app_logo.dart';
+import 'main_nav_holder_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -22,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> _moveToNextScreen() async {
     await Future.delayed(const Duration(seconds: 3));
-    Navigator.pushReplacementNamed(context, SignUpScreen.name);
+    Navigator.pushReplacementNamed(context, MainNavHolderScreen.name);
   }
 
   @override

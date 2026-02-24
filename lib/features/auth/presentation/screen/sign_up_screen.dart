@@ -1,6 +1,7 @@
 import 'package:e_commerce/app/app_colors.dart';
 import 'package:e_commerce/app/extensions/utils_extension.dart';
 import 'package:e_commerce/features/auth/presentation/screen/sign_in_screen.dart';
+import 'package:e_commerce/features/auth/presentation/screen/varify_otp_screen.dart';
 import 'package:e_commerce/features/auth/presentation/widgets/app_logo.dart';
 import 'package:flutter/material.dart';
 
@@ -115,10 +116,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
   void _onTapSignUpButton(){
-
+    Navigator.pushNamed(context, VarifyOtpScreen.name);
   }
   void _onTapSignInButton(){
-    Navigator.pop(context);
+    Navigator.pushNamed(context, SignInScreen.name);
   }
   @override
   void dispose() {
