@@ -1,5 +1,5 @@
 import 'package:e_commerce/app/provider/localization_provider.dart';
-import 'package:e_commerce/app/provider/main_nav_provider.dart';
+import 'package:e_commerce/features/shared/presentation/provider/main_nav_provider.dart';
 import 'package:e_commerce/app/provider/theme_provider.dart';
 import 'package:e_commerce/app/routes.dart';
 import 'package:flutter/material.dart';

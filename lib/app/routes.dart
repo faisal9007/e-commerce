@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../features/auth/presentation/screen/main_nav_holder_screen.dart';
+import '../features/shared/presentation/screen/main_nav_holder_screen.dart';
 import '../features/auth/presentation/screen/sign_in_screen.dart';
 import '../features/auth/presentation/screen/sign_up_screen.dart';
 import '../features/auth/presentation/screen/splash_screen.dart';

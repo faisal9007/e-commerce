@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../app/app_colors.dart';
-import '../../../../app/provider/main_nav_provider.dart';
+import '../provider/main_nav_provider.dart';
 import '../../../home/presentation/screen/home_screen.dart';
 
 class MainNavHolderScreen extends StatefulWidget {
