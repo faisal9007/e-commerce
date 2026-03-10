@@ -1,5 +1,8 @@
-
+import 'package:e_commerce/app/app_colors.dart';
+import 'package:e_commerce/app/assets_path.dart';
 import 'package:flutter/material.dart';
+import '../../../../app/constant.dart';
+import '../../../shared/presentation/widget/ProductsCard.dart';
 import '../widgets/home_category_list.dart';
 import '../widgets/home_app_bar.dart';
 import '../widgets/home_carousel.dart';
@@ -31,8 +34,9 @@ class _HomeScreenState extends State<HomeScreen> {
               SectionHeader(title: 'Categories', onTapSeeAll: () {}),
               SizedBox(height: 8),
               HomeCategoryList(),
-              SizedBox(height: 16),
               SectionHeader(title: 'Products', onTapSeeAll: () {}),
+              ProductsCard(),
+              SizedBox(height: 24),
             ],
           ),
         ),
@@ -40,7 +44,5 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
 
 
