@@ -23,6 +23,8 @@ class ProductsCard extends StatelessWidget {
         child: Column(
           children: [
             Container(
+              width: 180,
+              height: 140,
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: AppColors.themeColor.withAlpha(20),
@@ -48,7 +50,7 @@ class ProductsCard extends StatelessWidget {
                     ),
                   ),
                   Row(
-                    spacing: 8,
+                    mainAxisAlignment: .spaceBetween,
                     children: [
                       Text(
                         '${Constant.takaSign}120',
@@ -77,6 +79,7 @@ class ProductsCard extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(height: 4),
           ],
         ),
       ),
