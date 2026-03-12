@@ -13,14 +13,20 @@ class WishtListScreen extends StatefulWidget {
 class _WishtListScreenState extends State<WishtListScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('WishList'),
-        leading: IconButton(
-            onPressed: context.read<MainNavProvider>().backToHome,
-            icon: Icon(Icons.arrow_back_ios)),
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (_,_){
+        context.read<MainNavProvider>().backToHome();
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('WishList'),
+          leading: IconButton(
+              onPressed: context.read<MainNavProvider>().backToHome,
+              icon: Icon(Icons.arrow_back_ios)),
+        ),
+      
       ),
-
     );
   }
 }

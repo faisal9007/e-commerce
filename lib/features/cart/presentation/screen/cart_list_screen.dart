@@ -13,14 +13,20 @@ class CartListScreen extends StatefulWidget {
 class _CartListScreenState extends State<CartListScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Cart'),
-        leading: IconButton(
-            onPressed: context.read<MainNavProvider>().backToHome,
-         icon: Icon(Icons.arrow_back_ios)),
-      ),
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (_,_){
+        context.read<MainNavProvider>().backToHome();
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Cart'),
+          leading: IconButton(
+              onPressed: context.read<MainNavProvider>().backToHome,
+           icon: Icon(Icons.arrow_back_ios)),
+        ),
 
+      ),
     );
   }
 }
