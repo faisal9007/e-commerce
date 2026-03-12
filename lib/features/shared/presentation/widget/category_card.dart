@@ -26,10 +26,17 @@ class CategoryCard extends StatelessWidget {
           ),
         ),
         Text(
-            'Electronics',
+            getTitle('Electronics, Music'),
             style: context.textTheme.bodyLarge?.copyWith(color: AppColors.themeColor)
         ),
       ],
     );
   }
-}
+  String getTitle(String name){
+    if (name.length > 10) {
+      return '${name.substring(0, 10)}...';
+    } else {
+      return name;
+    }
+  }
+  }

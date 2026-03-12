@@ -10,6 +10,7 @@ class AppTheme {
     textTheme: _textTheme,
     inputDecorationTheme: _inputDecorationTheme,
     filledButtonTheme: _filledButtonTheme,
+    appBarTheme: _appBarTheme,
     );
 
 
@@ -21,6 +22,7 @@ class AppTheme {
       textTheme: _textTheme,
       inputDecorationTheme: _inputDecorationTheme,
     filledButtonTheme: _filledButtonTheme,
+    appBarTheme: _appBarTheme,
       );
   static TextTheme get _textTheme => TextTheme(
     titleLarge: TextStyle(
@@ -32,6 +34,14 @@ class AppTheme {
       fontSize: 16,
       color: Colors.grey.shade700,
     ),
+  );
+  static AppBarTheme get _appBarTheme => AppBarTheme(
+    titleTextStyle: TextStyle(
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+      color: Colors.black54,
+    ),
+
   );
 
   static InputDecorationTheme get _inputDecorationTheme => InputDecorationTheme(
