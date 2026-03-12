@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-
+import '../../../../products/presentation/screen/products_detail_screen.dart';
 import '../../../shared/presentation/widget/ProductsCard.dart';
 
+
 class HomeProductsList extends StatelessWidget {
-  const HomeProductsList({
-    super.key,
-  });
+  const HomeProductsList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +12,19 @@ class HomeProductsList extends StatelessWidget {
       height: 225,
       child: ListView.separated(
         itemCount: 10,
-        scrollDirection: .horizontal,
+        scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return ProductsCard();
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const ProductDetailScreen(),
+                ),
+              );
+            },
+            child: ProductsCard(),
+          );
         },
         separatorBuilder: (context, index) {
           return SizedBox(width: 8);

@@ -1,16 +1,17 @@
-import 'package:e_commerce/features/shared/presentation/provider/main_nav_provider.dart';
-import 'package:e_commerce/features/shared/presentation/widget/category_card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class CategoryListScreen extends StatefulWidget {
-  const CategoryListScreen({super.key});
+import '../../../shared/presentation/provider/main_nav_provider.dart';
+import '../../../shared/presentation/widget/ProductsCard.dart';
+
+class WishListScreen extends StatefulWidget {
+  const WishListScreen({super.key});
 
   @override
-  State<CategoryListScreen> createState() => _CategoryListScreenState();
+  State<WishListScreen> createState() => _WishListScreenState();
 }
 
-class _CategoryListScreenState extends State<CategoryListScreen> {
+class _WishListScreenState extends State<WishListScreen> {
   @override
   Widget build(BuildContext context) {
     return PopScope(
@@ -20,7 +21,7 @@ class _CategoryListScreenState extends State<CategoryListScreen> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Categories'),
+          title: Text('Wish-List'),
           leading: IconButton(
             onPressed: () {
               context.read<MainNavProvider>().backToHome();
@@ -31,14 +32,14 @@ class _CategoryListScreenState extends State<CategoryListScreen> {
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: GridView.builder(
-            itemCount: 20,
+            itemCount: 12,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4,
+              crossAxisCount: 3,
               mainAxisSpacing: 8,
             ),
             itemBuilder: (context, index) {
               return FittedBox(
-                  child: CategoryCard());
+                  child: ProductsCard());
             },
           ),
         ),

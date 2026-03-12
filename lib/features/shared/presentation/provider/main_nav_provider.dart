@@ -11,7 +11,10 @@ class MainNavProvider extends ChangeNotifier{
   }
   void backToHome(){
     setIndex(0);
-
   }
+  void moveToCategory(){
+    setIndex(1);}
+  void moveToProducts(){
+    setIndex(3);}
 
 }

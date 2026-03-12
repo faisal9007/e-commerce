@@ -1,4 +1,6 @@
+import 'package:e_commerce/features/shared/presentation/provider/main_nav_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../widgets/home_products_list.dart';
 import '../widgets/home_category_list.dart';
 import '../widgets/home_app_bar.dart';
@@ -28,16 +30,24 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(height: 16),
               HomeCarousel(),
               SizedBox(height: 16),
-              SectionHeader(title: 'Categories', onTapSeeAll: () {}),
+              SectionHeader(title: 'Categories', onTapSeeAll: () {
+                context.read<MainNavProvider>().moveToCategory();
+              }),
               SizedBox(height: 8),
               HomeCategoryList(),
-              SectionHeader(title: 'Popular', onTapSeeAll: () {}),
+              SectionHeader(title: 'Popular', onTapSeeAll: () {
+                context.read<MainNavProvider>().moveToProducts();
+              }),
             HomeProductsList(),
               SizedBox(height: 16),
-              SectionHeader(title: 'Special', onTapSeeAll: () {}),
+              SectionHeader(title: 'Special', onTapSeeAll: () {
+                context.read<MainNavProvider>().moveToProducts();
+              }),
               HomeProductsList(),
               SizedBox(height: 16),
-              SectionHeader(title: 'New', onTapSeeAll: () {}),
+              SectionHeader(title: 'New', onTapSeeAll: () {
+                context.read<MainNavProvider>().moveToProducts();
+              }),
               HomeProductsList(),
               SizedBox(height: 16),
             ],

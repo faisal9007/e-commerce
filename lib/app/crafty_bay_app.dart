@@ -1,4 +1,5 @@
 import 'package:e_commerce/app/provider/localization_provider.dart';
+
 import 'package:e_commerce/features/shared/presentation/provider/main_nav_provider.dart';
 import 'package:e_commerce/app/provider/theme_provider.dart';
 import 'package:e_commerce/app/routes.dart';
@@ -7,6 +8,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 
 import '../features/auth/presentation/screen/splash_screen.dart';
+import '../features/shared/presentation/widget/cart_item.dart';
 import '../features/shared/presentation/widget/language_switcher.dart';
 
 import '../l10n/app_localizations.dart';
@@ -20,12 +22,13 @@ class CraftyBayApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) =>
-          LocalizationProvider()..loadLocale(),
+          create: (_) => LocalizationProvider()..loadLocale(),
         ),
-        ChangeNotifierProvider(create: (_) =>
-        ThemeProvider()..loadThemeData()),
+        ChangeNotifierProvider(
+          create: (_) => ThemeProvider()..loadThemeData(),
+        ),
         ChangeNotifierProvider(create: (_) => MainNavProvider()),
+        ChangeNotifierProvider(create: (_) => CartProvider()), // ✅ added
       ],
       child: Consumer<LocalizationProvider>(
         builder: (context, localizationProvider, _) {
